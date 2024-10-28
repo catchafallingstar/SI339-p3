@@ -1,0 +1,329 @@
+/* Mobile-First Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Light Mode*/
+.lightmode {
+    --background-color: rgba(242, 232, 232, 0.888);
+    --text-color: rgb(33, 11, 11);
+    --skip-main-color: #224725;
+    --athlete-p-color: #006b30;
+    --he-c: #213271;
+    --h1-c: #636105; 
+} 
+
+/* Dark Mode */
+.darkmode {
+    --background-color: #092b42;
+    --text-color: white;
+    --skip-main-color: #C5FCCA;
+    --athlete-p-color: lightskyblue;
+    --he-c: lightsteelblue;
+    --h1-c: #fdb338; /* Yellow */
+}
+
+/* Global Styles */
+body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    position: relative;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.212);
+    text-align: center;
+    padding: 40px;
+    top: 0;
+    z-index: 1000;
+}
+
+h1 a {
+    font-size: 2.5rem;
+    color: var(--h1-c);  
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: var(--he-c); /* Dynamic color based on mode */
+}
+body a{
+    display: block;
+    color: var(--text-color); /* Dynamic color based on mode */
+    
+    width: 100%;
+    text-align: center;
+}
+body a:last-child{
+    /* font-size: 2.5rem; */
+    color: var(--h1-c); /* Dynamic color based on mode */
+    margin: 0;
+}
+#be {
+ 
+    background-color: #10518668;
+    
+}
+
+nav {
+    background-color: #10518661;
+    padding: 10px;
+    display: flex;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0 3px;
+    list-style: none;
+}
+
+nav ul li a {
+    margin: 0 3px;
+    text-align: center;
+    color: var(--nav-c);
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Golden yellow on hover to add emphasis */
+}
+
+/* Team Results */
+#team-results {
+    margin: 20px 0;
+}
+
+#team-results h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px #171c1d;
+    margin-bottom: 20px;
+    background-color: #171c1d;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table Headers and Cells */
+th,
+td {
+    padding: 15px;
+    text-align: center; /* Center align the text */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    color: lightpink; /* Static color */
+}
+
+th {
+    background-color: #000000;
+    text-transform: uppercase;
+    color: #f0f2F3;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Gallery Styles */
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+#gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual Results */
+#individual-results {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+#individual-results h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#individual-results .athlete {
+    background-color: rgba(16, 81, 134, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--athlete-re);
+}
+
+#individual-results .athlete:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+#individual-results .athlete figure {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#individual-results .athlete img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fdb338;
+}
+
+#individual-results .athlete figcaption {
+    font-weight: bold;
+    color: #FFD700;
+    margin-top: 10px;
+}
+
+#individual-results .athlete dl {
+    margin: 0;
+    padding: 0;
+}
+
+#individual-results .athlete dt {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--athlete-re);
+}
+
+#individual-results .athlete dd {
+    margin: 0 0 10px 0;
+    color:var(--dd-d);
+}
+
+/* Footer */
+footer {
+    margin: 5px;
+    padding: 5%;
+    text-align: center;
+    background-color: #171c1d;
+    color: white;
+}
+
+/* Summary Section */
+#summary {
+    color: var(--text-color); /* Apply global text color for mode */
+}
+
+#summary .athlete {
+    color: var(--athlete-p-color);
+    align-items: center;
+}
+
+/* Main Content */
+main {
+    padding: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* "Toggle mode" Button Hover */
+#bott:hover {
+    background-color: #FFD700;
+    color: #105186;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 a {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
+
+    #gallery {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 3% 4%;
+    }
+}
+
+/* Light Mode Variables via Media Query */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #092b42;
+        --text-color: white;
+        --skip-main-color: #C5FCCA;
+        --athlete-p-color: lightskyblue;
+        --he-c: lightsteelblue;
+        --h1-c: #fdb338; /* Yellow */
+        --athlete-re:white;
+        --dd-d:white;
+        --nav-c:#f0f2F3;
+    }
+}
+/* Optional: Explicit Light Mode via Media Query */
+/* @media (prefers-color-scheme: light) {
+    :root { 
+         --background-color: rgba(242, 232, 232, 0.888);
+        --text-color: rgb(33, 11, 11);
+        --skip-main-color: #224725;
+        --athlete-p-color: #006b30;
+        --he-c: #2c0117;
+        --h1-c: #0b1d69; 
+        --athlete-re: white;
+        --dd-d: white;
+        --nav-c:white;
+    }
+} */
