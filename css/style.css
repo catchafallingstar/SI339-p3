@@ -2,6 +2,7 @@
 * {
     box-sizing: border-box;
 }
+
 :root {
     --background-color: #092b42;
     --text-color: white;
@@ -74,11 +75,13 @@ body a:last-child {
     /*skip main content*/
     background-color: #10518668;
 }
+
 .navbar-hidden {
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
-    
+
 }
+
 nav {
     background-color: #10518661;
     padding: 10px;
@@ -128,9 +131,13 @@ table {
     margin-bottom: 20px;
     background-color: #171c1d;
     border-radius: 10px;
-    overflow-x:scroll;
-  
+    overflow-x: scroll;
+    white-space: nowrap;
+    /* Prevent cells from wrapping onto multiple lines */
 }
+
+
+
 
 /* Table Headers and Cells */
 th,
@@ -290,4 +297,3 @@ main {
         --nav-c: #f0f2F3;
     }
 }
-
