@@ -8,26 +8,6 @@ html {
     overflow-x: hidden;
 }
 
-/* Light Mode*/
-.lightmode {
-    --background-color: rgba(242, 232, 232, 0.888);
-    --text-color: rgb(33, 11, 11);
-    --skip-main-color: #224725;
-    --athlete-p-color: #006b30;
-    --he-c: #213271;
-    --h1-c: #636105; 
-} 
-
-/* Dark Mode */
-.darkmode {
-    --background-color: #092b42;
-    --text-color: white;
-    --skip-main-color: #C5FCCA;
-    --athlete-p-color: lightskyblue;
-    --he-c: lightsteelblue;
-    --h1-c: #fdb338; /* Yellow */
-}
-
 /* Global Styles */
 body {
     height: 100%;
@@ -49,34 +29,44 @@ header {
 }
 
 h1 a {
+    /*SEC... big title only*/
     font-size: 2.5rem;
-    color: var(--h1-c);  
+    color: var(--h1-c);
     margin: 0;
 }
 
 h2 {
+    /*Individual result, gallery etc. subtitles*/
     font-size: 1.2rem;
     margin-top: 10px;
-    color: var(--he-c); /* Dynamic color based on mode */
+    color: var(--he-c);
+    /* Dynamic color based on mode */
 }
-body a{
+
+body a {
     display: block;
-    color: var(--text-color); /* Dynamic color based on mode */
-    
+    color: var(--text-color);
+    /* Dynamic color based on mode */
+
     width: 100%;
     text-align: center;
 }
-body a:last-child{
-    /* font-size: 2.5rem; */
-    color: var(--h1-c); /* Dynamic color based on mode */
+
+body a:last-child {
+    color: var(--h1-c);
+    /* Dynamic color based on mode */
     margin: 0;
 }
-#be {
- 
+
+#skip-to-main {
+    /*skip main content*/
     background-color: #10518668;
+}
+.navbar-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
     
 }
-
 nav {
     background-color: #10518661;
     padding: 10px;
@@ -84,6 +74,7 @@ nav {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 nav ul {
@@ -104,7 +95,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #FFD700; /* Golden yellow on hover to add emphasis */
+    color: #FFD700;
+    /* Golden yellow on hover to add emphasis */
 }
 
 /* Team Results */
@@ -124,20 +116,25 @@ table {
     margin-bottom: 20px;
     background-color: #171c1d;
     border-radius: 10px;
-    overflow: hidden;
+    overflow-x:scroll;
+  
 }
 
 /* Table Headers and Cells */
 th,
 td {
     padding: 15px;
-    text-align: center; /* Center align the text */
+    text-align: center;
+    /* Center align the text */
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(4px);
-    color: lightpink; /* Static color */
+    color: lightpink;
+    /* Static color */
 }
 
 th {
+    position: sticky;
+    top: 0;
     background-color: #000000;
     text-transform: uppercase;
     color: #f0f2F3;
@@ -235,7 +232,7 @@ tr:hover {
 
 #individual-results .athlete dd {
     margin: 0 0 10px 0;
-    color:var(--dd-d);
+    color: var(--dd-d);
 }
 
 /* Footer */
@@ -249,7 +246,8 @@ footer {
 
 /* Summary Section */
 #summary {
-    color: var(--text-color); /* Apply global text color for mode */
+    color: var(--text-color);
+    /* Apply global text color for mode */
 }
 
 #summary .athlete {
@@ -307,12 +305,14 @@ main {
         --skip-main-color: #C5FCCA;
         --athlete-p-color: lightskyblue;
         --he-c: lightsteelblue;
-        --h1-c: #fdb338; /* Yellow */
-        --athlete-re:white;
-        --dd-d:white;
-        --nav-c:#f0f2F3;
+        --h1-c: #fdb338;
+        /* Yellow */
+        --athlete-re: white;
+        --dd-d: white;
+        --nav-c: #f0f2F3;
     }
 }
+
 /* Optional: Explicit Light Mode via Media Query */
 /* @media (prefers-color-scheme: light) {
     :root { 

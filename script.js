@@ -8,24 +8,19 @@ images.forEach(function (img) {
     });
 });
 
-// const toggleButton = document.getElementById('bott');
-// toggleButton.addEventListener('click', () => {
-//     document.body.classList.toggle('darkmode');
-    
-// });
+let lastScrollPosition = 0;
+const navbar = document.querySelector('nav');
 
-// function myFunction() {
-//     var element = document.body;
-//     element.classList.toggle("darkmode");
-//     console.log("botton clicked");
-//  }
+window.addEventListener('scroll', () => {
+    const currentScrollPosition = window.scrollY;
 
-//  document.addEventListener('DOMContentLoaded', () => {
-//     const savedTheme = localStorage.getItem('theme');
-//     if (savedTheme === 'lightmode') {
-//         document.body.classList.add('lightmode');
-        
-//     } else {
-//         document.body.classList.add('darkmode'); // Default to darkmode
-//     }
-// });
+    if (currentScrollPosition > lastScrollPosition) {
+        // User is scrolling down - hide the navbar
+        navbar.classList.add('navbar-hidden');
+    } else {
+        // User is scrolling up - show the navbar
+        navbar.classList.remove('navbar-hidden');
+    }
+
+    lastScrollPosition = currentScrollPosition;
+});
