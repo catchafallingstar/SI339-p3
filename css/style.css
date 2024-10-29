@@ -2,6 +2,18 @@
 * {
     box-sizing: border-box;
 }
+:root {
+    --background-color: #092b42;
+    --text-color: white;
+    --skip-main-color: #C5FCCA;
+    --athlete-p-color: lightskyblue;
+    --he-c: lightsteelblue;
+    --h1-c: #fdb338;
+    /* Yellow */
+    --athlete-re: white;
+    --dd-d: white;
+    --nav-c: #f0f2F3;
+}
 
 html {
     scroll-behavior: smooth;
@@ -262,48 +274,7 @@ main {
     margin: 0 auto;
 }
 
-/* "Toggle mode" Button Hover */
-#bott:hover {
-    background-color: #FFD700;
-    color: #105186;
-}
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    h1 a {
-        font-size: 1.5rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li a {
-        padding: 10px;
-    }
-
-    #gallery {
-        grid-template-columns: 1fr;
-    }
-
-    table {
-        font-size: 0.9rem;
-    }
-
-    th,
-    td {
-        padding: 3% 4%;
-    }
-}
-
-@media (max-width: 400px) {
-    table {
-       
-        overflow-x: scroll; /* Enable horizontal scrolling */
-        white-space: nowrap; /* Prevent cells from wrapping onto multiple lines */
-    }
-}
 /* Light Mode Variables via Media Query */
 @media (prefers-color-scheme: dark) {
     :root {
@@ -320,17 +291,3 @@ main {
     }
 }
 
-/* Optional: Explicit Light Mode via Media Query */
-/* @media (prefers-color-scheme: light) {
-    :root { 
-         --background-color: rgba(242, 232, 232, 0.888);
-        --text-color: rgb(33, 11, 11);
-        --skip-main-color: #224725;
-        --athlete-p-color: #006b30;
-        --he-c: #2c0117;
-        --h1-c: #0b1d69; 
-        --athlete-re: white;
-        --dd-d: white;
-        --nav-c:white;
-    }
-} */
