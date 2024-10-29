@@ -282,7 +282,7 @@ main {
 }
 
 
-/* Light Mode Variables via Media Query */
+/* Dark Mode Variables via Media Query */
 @media (prefers-color-scheme: dark) {
     :root {
         --background-color: #092b42;
