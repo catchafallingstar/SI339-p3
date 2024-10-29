@@ -297,6 +297,13 @@ main {
     }
 }
 
+@media (max-width: 400px) {
+    table {
+       
+        overflow-x: scroll; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent cells from wrapping onto multiple lines */
+    }
+}
 /* Light Mode Variables via Media Query */
 @media (prefers-color-scheme: dark) {
     :root {
