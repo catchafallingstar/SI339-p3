@@ -11,7 +11,7 @@
     --he-c: lightsteelblue;
     --h1-c: #fdb338;
     /* Yellow */
-    --athlete-re: white;
+    --athlete-re: #FFD700;;
     --dd-d: white;
     --nav-c: #f0f2F3;
 }
@@ -34,19 +34,21 @@ body {
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.212);
+    background-color: rgba(0, 0, 0, 0.137);
     text-align: center;
     padding: 40px;
     top: 0;
-    z-index: 1000;
+    z-index: 10;
 }
 
-h1 a {
-    /*SEC... big title only*/
-    font-size: 2.5rem;
+h1 {
+    text-align: center;
     color: var(--h1-c);
+    font-size: 2.5rem;
     margin: 0;
 }
+
+
 
 h2 {
     /*Individual result, gallery etc. subtitles*/
@@ -65,7 +67,7 @@ body a {
     text-align: center;
 }
 
-body a:last-child {
+header a {
     color: var(--h1-c);
     /* Dynamic color based on mode */
     margin: 0;
@@ -73,23 +75,27 @@ body a:last-child {
 
 #skip-to-main {
     /*skip main content*/
-    background-color: #10518668;
+    background-color: #105186 ;
+    color: white;
 }
 
-.navbar-hidden {
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
+/* .navbar-hidden {
+    background-color: #105186ec ;
+    
+} */
 
-}
 
 nav {
-    background-color: #10518661;
+    
+    background-color: #105186 ;
     padding: 10px;
-    display: flex;
-    top: 0;
-    z-index: 1000;
+    display: block;
+    position: sticky; /* Makes the nav sticky */
+    top: 0; /* Sticks to the top */
+    z-index: 10; /* Ensures it's on top of other content */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+
 }
 
 nav ul {
@@ -103,13 +109,13 @@ nav ul {
     list-style: none;
 }
 
-nav ul li a {
+nav a {
     margin: 0 3px;
     text-align: center;
-    color: var(--nav-c);
+    color: white;
 }
 
-nav ul li a:hover {
+nav a:hover {
     color: #FFD700;
     /* Golden yellow on hover to add emphasis */
 }
@@ -131,35 +137,42 @@ table {
     margin-bottom: 20px;
     background-color: #171c1d;
     border-radius: 10px;
-    overflow-x: scroll;
-    white-space: nowrap;
-    /* Prevent cells from wrapping onto multiple lines */
+    table-layout:fixed;
 }
 
-
-
-
-/* Table Headers and Cells */
-th,
-td {
-    padding: 15px;
-    text-align: center;
-    /* Center align the text */
+th, td {
+    display: table-cell; 
+    padding: 1vw; /* Use viewport width units for padding */
+    text-align: center; /* Center align the text */
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(4px);
-    color: lightpink;
-    /* Static color */
+    color: lightpink; /* Static color */
+    word-wrap: break-word; /* Allow words to wrap to the next line */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Show ellipsis if the content overflows */
+   font-size: 1rem;; /* Use viewport units for font size */
 }
 
 th {
-    position: sticky;
-    top: 0;
-    background-color: #000000;
-    text-transform: uppercase;
-    color: #f0f2F3;
-    font-weight: bold;
+    font-size: 1.5rem;/* Larger font size for header */
+    color:lightblue;
+    background-color: #171c1d; /* Solid background color */
+    top: 0; /* Sticks the header to the top */
 }
 
+th.meet-column, td.meet-column {
+   padding:10px;
+    color:pink;
+}
+
+th.link-column, td.link-column a{
+    padding:10px;
+    color:#fdb338;
+}
+th.meet-column, th.link-column{
+    position: sticky;
+    color: lightblue;
+    transition: ease-in-out;
+}
 tr:nth-child(even) {
     background-color: rgba(255, 255, 255, 0.08);
     color: white;
@@ -168,6 +181,7 @@ tr:nth-child(even) {
 tr:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
+
 
 /* Gallery Styles */
 #gallery {
@@ -234,7 +248,8 @@ tr:hover {
 
 #individual-results .athlete figcaption {
     font-weight: bold;
-    color: #FFD700;
+    color:var(--athlete-re);
+   
     margin-top: 10px;
 }
 
@@ -256,11 +271,16 @@ tr:hover {
 
 /* Footer */
 footer {
-    margin: 5px;
+   
     padding: 5%;
     text-align: center;
     background-color: #171c1d;
     color: white;
+   
+}
+footer a{
+    color: white;
+    background-color:#171c1d ;
 }
 
 /* Summary Section */
@@ -271,6 +291,7 @@ footer {
 
 #summary .athlete {
     color: var(--athlete-p-color);
+    font:bold;
     align-items: center;
 }
 
@@ -280,20 +301,31 @@ main {
     max-width: 100%;
     margin: 0 auto;
 }
+#main-title{
+    padding:30px;
+    
+}
 
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
 
-/* Dark Mode Variables via Media Query */
-@media (prefers-color-scheme: dark) {
+/* Light Mode Variables via Media Query */
+@media (prefers-color-scheme: light) {
     :root {
-        --background-color: #092b42;
-        --text-color: white;
-        --skip-main-color: #C5FCCA;
-        --athlete-p-color: lightskyblue;
-        --he-c: lightsteelblue;
-        --h1-c: #fdb338;
+        --background-color:#f0f2F3;
+        --text-color: #092b42;
+        --skip-main-color: #171c1d;
+        --athlete-p-color: #105186;
+        --he-c: #1f2d33;
+        --h1-c:  #105186;
         /* Yellow */
         --athlete-re: white;
         --dd-d: white;
-        --nav-c: #f0f2F3;
+        --nav-c: #073f14;
     }
 }
