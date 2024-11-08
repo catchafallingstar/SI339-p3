@@ -32,8 +32,14 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
-
 header {
+    background-color: rgba(0, 0, 0, 0.137);
+    text-align: center;
+    padding: 40px;
+    top: 0;
+    z-index: 10;
+}
+#main-header {
     background-color: rgba(0, 0, 0, 0.137);
     text-align: center;
     padding: 40px;
