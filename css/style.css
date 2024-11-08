@@ -28,7 +28,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.2;
     position: relative;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -45,7 +45,8 @@ header {
 #main-header {
     background-color: rgba(0, 0, 0, 0.137);
     text-align: center;
-    padding: 0;
+    align-items: center;
+    padding: 3px 10px;
     top: 0;
     z-index: 10;
     height: 45vh;
@@ -53,9 +54,9 @@ header {
 
 #main-page-img {
 
-   
-    height:40%;
-    width:40%;
+
+    height: 25%;
+    width: 25%;
     /* Makes the image take the full width of its container */
 
     /* Keeps the aspect ratio intact */
@@ -63,7 +64,7 @@ header {
     /* Ensures the whole image is displayed without cropping */
     display: block;
     /* Prevents any default inline spacing issues */
-    margin: 0 auto;
+    margin: 5px auto;
     /* Centers the image if needed */
 
 }
@@ -351,8 +352,8 @@ main {
 }
 
 #main-title {
-    padding: 30px;
-   font-size: 2em;
+    font-size: 1.5rem;
+    padding: 8px;
 
 }
 
