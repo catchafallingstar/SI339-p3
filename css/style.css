@@ -11,7 +11,8 @@
     --he-c: lightsteelblue;
     --h1-c: #fdb338;
     /* Yellow */
-    --athlete-re: #FFD700;;
+    --athlete-re: #FFD700;
+    ;
     --dd-d: white;
     --nav-c: #f0f2F3;
 }
@@ -32,6 +33,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
+
 header {
     background-color: rgba(0, 0, 0, 0.137);
     text-align: center;
@@ -39,16 +41,31 @@ header {
     top: 0;
     z-index: 10;
 }
+
 #main-header {
     background-color: rgba(0, 0, 0, 0.137);
     text-align: center;
-    padding: 40px;
+    padding: 0;
     top: 0;
     z-index: 10;
     height: 45vh;
 }
-#main-page-img{
-    height: 30%;
+
+#main-page-img {
+
+   
+    height:40%;
+    width:40%;
+    /* Makes the image take the full width of its container */
+
+    /* Keeps the aspect ratio intact */
+    object-fit: contain;
+    /* Ensures the whole image is displayed without cropping */
+    display: block;
+    /* Prevents any default inline spacing issues */
+    margin: 0 auto;
+    /* Centers the image if needed */
+
 }
 
 h1 {
@@ -85,7 +102,7 @@ header a {
 
 #skip-to-main {
     /*skip main content*/
-    background-color: #105186 ;
+    background-color: #105186;
     color: white;
 }
 
@@ -96,13 +113,16 @@ header a {
 
 
 nav {
-    
-    background-color: #105186 ;
+
+    background-color: #105186;
     padding: 10px;
     display: block;
-    position: sticky; /* Makes the nav sticky */
-    top: 0; /* Sticks to the top */
-    z-index: 10; /* Ensures it's on top of other content */
+    position: sticky;
+    /* Makes the nav sticky */
+    top: 0;
+    /* Sticks to the top */
+    z-index: 10;
+    /* Ensures it's on top of other content */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 
@@ -147,42 +167,59 @@ table {
     margin-bottom: 20px;
     background-color: #171c1d;
     border-radius: 10px;
-    table-layout:fixed;
+    table-layout: fixed;
 }
 
-th, td {
-    display: table-cell; 
-    padding: 1vw; /* Use viewport width units for padding */
-    text-align: center; /* Center align the text */
+th,
+td {
+    display: table-cell;
+    padding: 1vw;
+    /* Use viewport width units for padding */
+    text-align: center;
+    /* Center align the text */
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    color: lightpink; /* Static color */
-    word-wrap: break-word; /* Allow words to wrap to the next line */
-    overflow: hidden; /* Prevent overflow */
-    text-overflow: ellipsis; /* Show ellipsis if the content overflows */
-   font-size: 1rem;; /* Use viewport units for font size */
+    color: lightpink;
+    /* Static color */
+    word-wrap: break-word;
+    /* Allow words to wrap to the next line */
+    overflow: hidden;
+    /* Prevent overflow */
+    text-overflow: ellipsis;
+    /* Show ellipsis if the content overflows */
+    font-size: 1rem;
+    ;
+    /* Use viewport units for font size */
 }
 
 th {
-    font-size: 1.5rem;/* Larger font size for header */
-    color:lightblue;
-    background-color: #171c1d; /* Solid background color */
-    top: 0; /* Sticks the header to the top */
+    font-size: 1.5rem;
+    /* Larger font size for header */
+    color: lightblue;
+    background-color: #171c1d;
+    /* Solid background color */
+    top: 0;
+    /* Sticks the header to the top */
 }
 
-th.meet-column, td.meet-column {
-   padding:10px;
-    color:pink;
+th.meet-column,
+td.meet-column {
+    padding: 10px;
+    color: pink;
 }
 
-th.link-column, td.link-column a{
-    padding:10px;
-    color:#fdb338;
+th.link-column,
+td.link-column a {
+    padding: 10px;
+    color: #fdb338;
 }
-th.meet-column, th.link-column{
+
+th.meet-column,
+th.link-column {
     position: sticky;
     color: lightblue;
     transition: ease-in-out;
 }
+
 tr:nth-child(even) {
     background-color: rgba(255, 255, 255, 0.08);
     color: white;
@@ -258,8 +295,8 @@ tr:hover {
 
 #individual-results .athlete figcaption {
     font-weight: bold;
-    color:var(--athlete-re);
-   
+    color: var(--athlete-re);
+
     margin-top: 10px;
 }
 
@@ -281,16 +318,17 @@ tr:hover {
 
 /* Footer */
 footer {
-   
+
     padding: 5%;
     text-align: center;
     background-color: #171c1d;
     color: white;
-   
+
 }
-footer a{
+
+footer a {
     color: white;
-    background-color:#171c1d ;
+    background-color: #171c1d;
 }
 
 /* Summary Section */
@@ -301,7 +339,7 @@ footer a{
 
 #summary .athlete {
     color: var(--athlete-p-color);
-    font:bold;
+    font: bold;
     align-items: center;
 }
 
@@ -311,9 +349,11 @@ main {
     max-width: 100%;
     margin: 0 auto;
 }
-#main-title{
-    padding:30px;
-    
+
+#main-title {
+    padding: 30px;
+   font-size: 2em;
+
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -327,12 +367,12 @@ main {
 /* Light Mode Variables via Media Query */
 @media (prefers-color-scheme: light) {
     :root {
-        --background-color:#f0f2F3;
+        --background-color: #f0f2F3;
         --text-color: #092b42;
         --skip-main-color: #171c1d;
         --athlete-p-color: #105186;
         --he-c: #1f2d33;
-        --h1-c:  #105186;
+        --h1-c: #105186;
         /* Yellow */
         --athlete-re: white;
         --dd-d: white;
