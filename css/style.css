@@ -39,6 +39,10 @@ header {
     padding: 40px;
     top: 0;
     z-index: 10;
+    height: 45vh;
+}
+#main-page-img{
+    height: 30%;
 }
 
 h1 {
